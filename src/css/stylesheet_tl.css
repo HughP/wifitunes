@@ -1,0 +1,86 @@
+  body {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+  img {
+    border: 0;
+}
+  #all {
+  	text-align:center;
+  	width:320px;
+	margin-right: auto;
+	margin-left: auto;
+    font-family:Helvetica, Arial;
+    font-size: 20px;
+	font-weight: bold;
+    text-align:center;
+    color:#FFFFFF;
+    -webkit-text-size-adjust: none;
+}
+  a:link, a:visited {
+    font-family:Helvetica, Arial;
+    font-size: 20px;
+	font-weight: bold;
+    color:#000000;
+    -webkit-text-size-adjust: none;
+    text-decoration:none;
+}
+  #titlebar {
+    clear:both;
+    text-align:center;
+	margin-right: auto;
+	margin-left: auto;
+	height: 44px;
+    background:url(topbargrey.png) repeat-x;
+}
+  #toplaylistbutton {
+    float:left;
+    padding-top: 7px;
+    padding-left: 3px;
+}
+  #toguibutton {
+    float:right;
+    padding-top: 7px;
+    padding-right: 3px;
+}
+  #playlistname {
+    padding-top:12px;
+	white-space:pre;
+	overflow:hidden;
+	text-shadow: #131313 -1px -1px 3px;
+}
+  .trackitemframe {
+    border-bottom: 1px solid #e0e0e0;
+}
+  .tracklistitem {
+    clear:both;
+    height: 42px;
+}
+  .tracklistarrow {
+    float:right;
+    padding-top: 15px;
+    padding-left:2px;
+    padding-right:14px;
+}
+  .tracktitle {
+    width:275px;
+    text-align:left;
+    float:left;
+    margin-left: 10px;
+	white-space:nowrap;
+	overflow:hidden;
+	padding-top:9px;
+}
+  .trackartist {
+    font-size: 10px;
+    color: #c3c3c3;
+    width:275px;
+    text-align:left;
+    margin-left: 10px;
+	white-space:nowrap;
+	overflow:hidden;
+	float: left;
+	position:relative;
+	top:-3px;
+}
