@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name = "viewport" content ="width=device-width; height=416;" />
+  <link rel="stylesheet" type="text/css" href="stylesheet_tl.css" />
+  <title>wifiTunes</title>
+  <script type="text/javascript">
+    var MobileSafari = false;
+    function init () {
+      hideaddress();
+      markcurrent();
+      if (navigator.platform == "iPhone" || navigator.platform == "iPod") {
+        MobileSafari = true;
+      }
+    }
+    
+    function hideaddress () {
+      window.scrollTo(0, 1);
+      window.scrollTo(0, 0);
+    }
+    
+    function markcurrent () {
+      var Listitems = document.getElementsByTagName('a');
+      for (var i = 0 ; i < Listitems.length ; i++) {
+        var ThisLink = Listitems[i];
+        Address = ThisLink.getAttribute('href');
+        if (Address == "index.html?track=current&id=0") {
+          var Frame = ThisLink.parentNode;
+          Frame.style.background = "url(actlist.png) no-repeat";
+          var DivItems = ThisLink.getElementsByTagName('div');
+          for (var j = 0 ; j < DivItems.length ; j++) {
+            DivElement = DivItems[j];
+            DivClass = DivElement.getAttribute('class');
+            if (DivClass == "trackartist") {
+              DivElement.style.color = "#ffffff";
+            }
+            if (DivClass == "tracktitle") {
+              DivElement.style.color = "#ffffff";
+            }
+          }
+        }
+      }
+    }
+    
+    function gototop () {
+      if (MobileSafari && window.pageYOffset == 0) {
+        hideaddress();
+      }
+    }
+  </script>
+</head>
+<body bgcolor=#FFFFFF text=#000000 onload="init()" onscroll='gototop()'>
+<div id="all">
+  <div id="titlebar">
+    <div id="toplaylistbutton"><a href="playlists.html"><img src="toplaylists.png" alt="To playlist"></a></div>
+    <div id="toguibutton"><a href="index.html"><img src="nowplaying.png" alt="Now playing"></a></div>
+    <div id="playlistname">PLAYLIST</div>
+  </div>
+<!--TRACKLISTS-START-->
+<div class="trackitemframe"><a href="index.html?track=INDEX&id=ID"><div class="tracklistitem"><div class="tracklistarrow"><img src="ARROW.png" alt="Arrow right"></div><div class="tracktitle">NAME</div><div class="trackartist">ARTIST</div></div></a></div>
+<!--TRACKLISTS-END-->
+</div>
+</body>
+</html>

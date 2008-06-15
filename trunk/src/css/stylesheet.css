@@ -1,0 +1,269 @@
+  body {
+  	font-family:Helvetica, Arial;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	border:0;
+}
+  img {
+    border: 0;
+}
+  #textmessung {
+    visibility:hidden;
+    white-space:pre;
+    /*font-family:Helvetica;*/
+    font-size: 12px;
+	font-weight: bold;
+	text-shadow: #131313 -1px -1px 3px;
+    -webkit-text-size-adjust: none;
+}
+  #all {
+    position:relative;
+    z-index:1;
+  	text-align:center;
+  	width:320px;
+	margin-right: auto;
+	margin-left: auto;
+}
+  #volumelayer {
+    position:absolute;
+    left:0px;
+    width:320px;
+    display:none;
+    height: 320px;
+    z-index:2;
+	background: url(bg_volume.png) no-repeat;
+    /*font-family:Helvetica;*/
+    font-size: 12px;
+	font-weight: bold;
+	text-shadow: #131313 -1px -1px 3px;
+    text-align:center;
+    color:#FFFFFF;
+    -webkit-text-size-adjust: none;
+	top: 44px;
+}
+  #volumebar {
+	width: 32px;
+	height: 242px;
+	position: absolute;
+	top: 39px;
+	left: 50px;
+}
+  #volumebaract {
+	background: url(volact.png) no-repeat 0 100%;
+	bottom: 0;
+	position: absolute;
+	width: 32px;
+	left:0px;
+}
+  #volumeform {
+	position: absolute;
+	top: 41px;
+	left: 117px;
+	border-style: none;
+}
+  #fingerarea {
+	background: none repeat;
+	width: 174px;
+	border-style: none;
+	height: 237px;
+}
+  #topbar {
+    clear:both;
+    text-align:center;
+	margin-right: auto;
+	margin-left: auto;
+	height: 44px;
+	background: url(infobg.png) repeat-x;
+}
+  #left {
+    float:left;
+    padding-right:3px;
+    padding-left:3px;
+	padding-top: 6px;
+}
+  #volumebutton {
+    float:right;
+    padding-right:9px;
+    padding-left:9px;
+	padding-top: 7px;
+}
+  #infos {
+    /*font-family:Helvetica;*/
+    font-size: 12px;
+	font-weight: bold;
+	text-shadow: #131313 -1px -1px 3px;
+    color:#FFFFFF;
+    padding-top:1px;
+    -webkit-text-size-adjust: none;
+	padding:0;
+	line-height:13px;
+}
+  #artist {
+    text-align:center;
+  	color: #b3b3b3;
+	white-space:pre;
+	overflow:hidden;
+	text-indent:0px;
+}
+  #title {
+    text-align:center;
+	white-space:pre;
+	overflow:hidden;
+	text-indent:0px;
+}
+  #album {
+    text-align:center;
+  	color: #727272;
+	white-space:pre;
+	overflow:hidden;
+	text-indent:0px;
+}
+  #middle {
+    position:relative;
+}
+  #cover {
+  	width:320px;
+    clear:both;
+    text-align:center;
+    z-index:1;
+}
+  #extendedinfos {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:320px;
+    display:none;
+    height: 60px;
+    z-index:2;
+	background: url(alpha-0.5_pixel.png) repeat;
+    /*font-family:Helvetica;*/
+    font-size: 12px;
+	font-weight: bold;
+	text-shadow: #131313 -1px -1px 3px;
+    text-align:center;
+    color:#FFFFFF;
+    -webkit-text-size-adjust: none;
+  }
+  #output {
+    float:left;
+    padding-left:11px;
+	padding-top: 9px;
+}
+  #shuffle {
+    float:right;
+    padding-right: 12px;
+    padding-top: 19px;
+}
+  #playlistandposition {
+	width: 220px;
+	margin-left: 50px;
+}
+  #playlist {
+	padding-top: 6px;
+}
+  #position {
+    position:relative;
+	padding-top: 4px;
+}
+  #counterup {
+    float:left;
+    padding-left: 9px;
+	padding-top: 2px;
+}
+  #counterdown {
+    float:right;
+    padding-right: 9px;
+	padding-top: 2px;
+}
+  #posbar {
+    width:200px;
+    height: 9px;
+    margin-left:auto;
+    margin-right:auto;
+}
+  #posbarbg {
+	/*background:url(posact.png);*/
+    width:200px;
+    height: 9px;
+}
+  #posbarinact {
+	background: url(posinact.png) no-repeat;
+    width:200px;
+    height: 9px;
+    text-align:left;
+}
+  #posbaract {
+	background: url(posact.png) no-repeat;
+    width:100px;
+    height: 9px;
+}
+  #outputselect {
+    background: url(alpha-0.5_pixel.png) repeat;
+	width: 320px;
+	/*float: left;*/
+	position: absolute;
+	top: 60px;
+	left:0px;
+	font-size:0px;
+}
+  #outputbuttoncomputer {
+	background: url(localspeaker.png) no-repeat;
+	width: 72px;
+	height: 64px;
+	font-size: 10px;
+	float: left;
+	margin-top: 14px;
+	margin-bottom: 10px;
+	margin-left: 4px;
+	padding-top: 8px;
+}
+  .outputbuttonairtunes {
+	background: url(airtunes.png) no-repeat;
+	width: 72px;
+	height: 64px;
+	font-size: 10px;
+	float: left;
+	margin-top: 14px;
+	margin-bottom: 10px;
+	margin-left: 4px;
+	padding-top: 8px;
+}
+  #bottom {
+	/*background: url(mirror.jpg) no-repeat top center;*/
+	height: 83px;
+}
+  #bottomfiller {
+	height: 35px;
+	background: url(alpha-0.5_pixel.png) repeat;
+	font-size:0px;
+}
+  #bottombar {
+    clear:both;
+    text-align:center;
+	height: 52px;
+	background: url(bg_bottom.png) repeat;
+	bottom: 0;
+}
+  #prev {
+    float:left;
+    margin-left:50px;
+    padding-right:12px;
+    padding-left:12px;
+	padding-top: 12px;
+	padding-bottom:10px;
+}
+  #next {
+    float:right;
+    margin-right:50px;
+    padding-right:12px;
+    padding-left:12px;
+	padding-top: 12px;
+	padding-bottom:10px;
+}
+  #playpause {
+    margin-right:116px;
+    margin-left:116px;
+	padding-top: 10px;
+	padding-bottom:8px;
+}

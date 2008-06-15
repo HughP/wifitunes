@@ -1,0 +1,76 @@
+  body {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+  img {
+    border: 0;
+}
+  #all {
+  	text-align:center;
+  	width:320px;
+	margin-right: auto;
+	margin-left: auto;
+    font-family:Helvetica, Arial;
+    font-size: 20px;
+	font-weight: bold;
+    text-align:center;
+    color:#ffffff;
+    -webkit-text-size-adjust: none;
+}
+  a:link, a:visited {
+    font-family:Helvetica, Arial;
+    font-size: 20px;
+	font-weight: bold;
+    color:#000000;
+    -webkit-text-size-adjust: none;
+    text-decoration:none;
+}
+  #titlebar {
+    clear:both;
+    text-align:center;
+	margin-right: auto;
+	margin-left: auto;
+	height: 44px;
+    background:url(topbargrey.png) repeat-x;
+}
+  #filler {
+    float:left;
+	height: 44px;
+    width:70px;
+}
+  #toguibutton {
+    float:right;
+    padding-top: 7px;
+    padding-right: 4px;
+}
+  #playlistname {
+    padding-top:12px;
+	text-shadow: #131313 -1px -1px 3px;
+}
+  .playlistitemframe {
+    border-bottom: 1px solid #e0e0e0;
+    height: 43px;
+}
+  .playlistimage {
+    clear:both;
+    float:left;
+    padding-top:10px;
+	padding-left: 10px;
+    height: 33px;
+}
+  .playlistarrow {
+    float:right;
+    padding-top:16px;
+    padding-left:2px;
+    padding-right:14px;
+}
+  .playlisttext {
+    padding-top:10px;
+  	width: 248px;
+  	white-space:nowrap;
+  	overflow:hidden;
+    text-align:left;
+    float:left;
+    margin-left:10px;
+}

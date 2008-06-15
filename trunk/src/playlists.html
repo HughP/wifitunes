@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name = "viewport" content ="width=device-width; height=416;" />
+  <link rel="stylesheet" type="text/css" href="stylesheet_pl.css" />
+  <title>wifiTunes</title>
+  <script type="text/javascript">
+    var MobileSafari = false;
+    function init () {
+      hideaddress();
+      if (navigator.platform == "iPhone" || navigator.platform == "iPod") {
+        MobileSafari = true;
+      }
+    }
+    function hideaddress () {
+      window.scrollTo(0, 1);
+      window.scrollTo(0, 0);
+    }
+    function gototop () {
+      if (MobileSafari && window.pageYOffset == 0) {
+        hideaddress();
+      }
+    }
+  </script>
+</head>
+<body bgcolor=#FFFFFF text=#000000 onload="init()" onscroll='gototop()'>
+<div id="all">
+  <div id="titlebar">
+    <div id="filler"></div>
+    <div id="toguibutton"><a href="index.html"><img src="nowplaying.png" alt="Now playing"></a></div>
+    <div id="playlistname">Playlists</div>
+  </div>
+  <!--NORMALLISTS-START-->
+  
+  <div class="playlistitemframe">
+    <a href="index.html?list=INDEX&id=ID">
+        <div class="playlistimage"><img src="normalplaylistbullet.png" alt="Playlist"></div>
+        <div class="playlistarrow"><img src="arrow.png" alt="Arrow right"></div>
+        <div class="playlisttext">NAME</div>
+    </a>
+  </div>
+  
+  <!--NORMALLISTS-END-->
+  <!--SMARTLISTS-START-->
+  
+  <div class="playlistitemframe">
+    <a href="index.html?list=INDEX&id=ID">
+        <div class="playlistimage"><img src="smartplaylistbullet.png" alt="Playlist"></div>
+        <div class="playlistarrow"><img src="arrow.png" alt="Arrow right"></div>
+        <div class="playlisttext">NAME</div>
+    </a>
+  </div>
+
+  <!--SMARTLISTS-END-->
+</div>
+</body>
+</html>
