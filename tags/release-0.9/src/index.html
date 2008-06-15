@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width; height=416;" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+  <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="stylesheet_IE.css">
+  <![endif]-->
+  <!--RELOAD-->
+  <title>wifiTunes</title>
+  <script src="script.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    <!--var currentvolume = VOLUME;-->
+    var trackduration = DURATION;
+    var initialposition = POSITION;
+    var currentstate = STATE;
+  </script>
+</head>
+<body bgcolor=#000000 text=#000000 onorientationchange='setview()'>
+<span id="textmessung"></span>
+<div id="all">
+<div id="volumelayer" onclick="showvolumeform()">
+  <div id="volumebar">
+    <div id="volumebaract"></div>
+  </div>
+  <form id="volumeform" action="dummy.html" method="get">
+    <!--<textarea id="fingerarea" readonly="readonly" cols="30" rows="18" onmousewheel="setvolbar()" onmouseover="reversevol()" onmouseout="normalvol()"></textarea>-->
+    <textarea id="fingerarea" readonly="readonly" cols="30" rows="18" onmousewheel="setvolbar()" onmouseover="reversevol()" onmouseout="normalvol()"></textarea>
+  </form>
+</div>
+<div id="topbar">
+  <!--<div id="playlists"><a href="playlists.html"><img src="playlists.png" border="0" alt="Playlists"></a></div>-->
+  <div id="left"><a href="tracklist.html"><img src="left.png" border="0" alt="Tracklist"></a></div>
+  <div id="volumebutton" onclick="showvolumeform()"><img src="volume.png" border="0" alt="Volume"></div>
+  <div id="infos" onclick="scrollinfos()">
+    <div id="artist">ARTIST</div>
+    <div id="title">TITLE</div>
+    <div id="album">ALBUM</div>
+  </div>
+</div>
+<div id="middle">
+  <div id="cover"><a href="javascript:showextendedinfos()"><img src="ARTWORK.jpg" border="0" alt="Artwork"></a></div>
+  <div id="extendedinfos">
+    <div id="output"><a href="javascript:ajaxgetoutputs()"><img src="outputselect.png" border="0" alt="Repeat"></a></div>
+    <div id="shuffle"><a href="index.html?cmd=shuffle&id=ID"><img src="SHUFFLE.png" border="0" alt="Shuffle"></a></div>
+    <div id="playlistandposition">
+      <div id="playlist">PLAYLIST</div>
+      <div id="position">
+        <div id="posbar" onclick="ajaxsendposition(event, this)">
+          <div id="posbarbg">
+            <div id="posbarinact">
+              <div id="posbaract"></div>
+            </div>
+          </div>
+        </div>
+        <div id="counterup">0:00</div>
+        <div id="counterdown">0:00</div>
+      </div>
+    </div>
+    <div id="outputselect"></div>
+  </div>
+</div>
+<div id="bottom" style="background: url(MIRROR.jpg) no-repeat top center;">
+  <div id="bottomfiller" onclick="showextendedinfos()"></div>
+  <div id="bottombar">
+    <div id="prev" onclick="gotourl('index.html?cmd=prev&id=ID')"><img src="prevtrack.png" border="0" alt="Prev"></div>
+    <div id="next" onclick="gotourl('index.html?cmd=next&id=ID')"><img src="nexttrack.png" border="0" alt="Next"></div>
+    <div id="playpause" onclick="gotourl('index.html?cmd=playpause&id=ID')"><img src="PLAYPAUSE.png" border="0" alt="Play / Pause"></div>
+  </div>
+</div>
+</div>
+</body>
+</html>
