@@ -22,7 +22,8 @@ from Foundation import *
 from PreferencePanes import *
 from PyObjCTools import NibClassBuilder, AppHelper
 import os
-import socket
+#import socket
+from SystemConfiguration import *
 
 # Uncomment this during development, you'll get exception tracebacks when
 # the Python code fails.
@@ -96,7 +97,6 @@ class wifiTunesPref(NSPreferencePane):
         self.aboutTextFile = NSString.stringWithString_(os.path.expanduser("~/Library/PreferencePanes/wifiTunes.prefPane/Contents/Resources/about.rtfd"))
         self.hostname = ""
         self.ipv4 = ""
-        self.getAddress()
         return self
 
     def mainViewDidLoad(self):
@@ -153,7 +153,6 @@ class wifiTunesPref(NSPreferencePane):
             os.system("launchctl unload " + os.path.expanduser(LaunchdPlist))
         else:
             os.system("launchctl load -F " + os.path.expanduser(LaunchdPlist))
-            self.getAddress()
         self.getStatus()
         if Debug: print "start / stop"
         #self.portNumber.stringValue_("")
@@ -190,16 +189,30 @@ class wifiTunesPref(NSPreferencePane):
         os.system("open http://wifitunes.wordpress.com/")
 
     def getAddress(self):
-        self.hostname = socket.gethostname()
-        if Debug: print self.hostname
-        self.ipv4 = socket.gethostbyname(self.hostname)
-        if Debug: print self.ipv4
+        store = SCDynamicStoreCreate(None, "wifiTunes", None, None)
+        IPv6 = SCDynamicStoreCopyValue(store, "State:/Network/Global/IPv6")
+        IPv4 = SCDynamicStoreCopyValue(store, "State:/Network/Global/IPv4")
+        if Debug: print IPv6
+        if Debug: print IPv4
+        if IPv6 != None:
+            PrimaryInterface = IPv6["PrimaryInterface"]
+        elif IPv4 != None:
+            PrimaryInterface = IPv4["PrimaryInterface"]
+        else:
+            PrimaryInterface = "none"
+        if Debug: print PrimaryInterface
+        if PrimaryInterface != "none":
+            PrimaryIPv4Settings = SCDynamicStoreCopyValue(store, "State:/Network/Interface/" + PrimaryInterface + "/IPv4")
+            self.ipv4 = str(PrimaryIPv4Settings["Addresses"][0])
+        else:
+            self.ipv4 = "127.0.0.1"
 
     def getStatus(self):
         launchstatus = os.system("launchctl list | grep -q groovework.wifiTunes")
         if Debug: print launchstatus
         if launchstatus == 0:
             self.running = True
+            self.getAddress()
             self.statusText.setObjectValue_("wifiTunes is currently running.\nPress the Stop button to stop it.")
             self.startStopButton.setTitle_("Stop")
             self.sideImage.setImage_(self.imageOn)
